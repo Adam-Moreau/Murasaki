@@ -41,12 +41,14 @@ require_once 'sql/get.php';
 
             <div class="col-9 vocTabBox">
                 <h1 class="boxTitleWhite">Tableaux de vocabulaire</h1>
-                <!-- <div class="btnNav">
-                    <a class="btnText" href="#">Voir les tableaux</a> 
-                    
-                </div> -->
+                <a class="btnText" href="#">
+                    <div class="btnNav">
+                    Voir les tableaux
+                        
+                    </div>
+                </a> 
                 
-                <button class="btnNav">Voir les tableaux</button>
+                <!-- <button class="btnNav">Voir les tableaux</button> -->
             </div>
             <div class="col-3 dailyKanjiBox">
                 <div class="front shadow">
@@ -84,9 +86,20 @@ require_once 'sql/get.php';
 
             <div class="col-3 kanaBox">
                 <h1 class="boxTitleWhite">Les kanas</h1>
+                <a class="btnText" href="#">
+                    <div class="btnNav">
+                        Voir les tableaux
+                        
+                    </div>
+                </a> 
             </div>
             <div class="col-9 trainingBox">
-            <h1 class="boxTitleWhite">Salle de révisions</h1>
+                <h1 class="boxTitleWhite">Salle de révisions</h1>
+                <a class="btnText" href="#">
+                    <div class="btnNav">
+                        Voir les tableaux 
+                    </div>
+                </a> 
             </div>
             
         </div>

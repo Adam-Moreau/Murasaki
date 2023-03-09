@@ -63,6 +63,7 @@
   margin-bottom: 35px;
 }
 .kanaBox {
+  position: relative;
   width: 28rem;
   height: 28rem;
   background: #9c88a5;
@@ -233,15 +234,10 @@
 }
 
 .btnText {
-  margin: 0.6rem;
   text-decoration: none;
   font-style: normal;
   font-weight: 800;
   font-size: 24px;
   line-height: 29px;
   /* identical to box height */
-
-  display: flex;
-  align-items: center;
-  text-align: center;
 }
