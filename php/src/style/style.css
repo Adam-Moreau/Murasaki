@@ -1,0 +1,247 @@
+.customNavbar {
+  height: 6rem;
+}
+
+.pinkSquare {
+  width: 80px;
+  height: 80px;
+
+  background: #ffe4fd;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+
+.navbar-brand {
+  padding: none;
+  border-radius: 15px;
+}
+.siteIcon {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 58px;
+  /* identical to box height */
+
+  color: #392f5a;
+}
+.title {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 54px;
+  line-height: 65px;
+
+  color: #392f5a;
+}
+.frontTitle {
+  height: 12rem;
+}
+.mainContainer {
+  padding-left: 35px;
+
+  padding-right: 35px;
+}
+
+.vocTabBox {
+  position: relative;
+  flex: 1;
+  height: 28rem;
+  background: #be4772;
+  margin-right: 35px;
+}
+
+.container {
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 70px);
+  margin: 0 auto;
+  margin-bottom: 35px;
+}
+.kanaBox {
+  width: 28rem;
+  height: 28rem;
+  background: #9c88a5;
+}
+
+.trainingBox {
+  position: relative;
+  flex: 1;
+  height: 28rem;
+  background: #d3789a;
+  margin-left: 35px;
+}
+
+.boxTitleWhite {
+  margin: 1rem;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 58px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #ffffff;
+}
+.boxTitle {
+  margin: 1rem;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 58px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #392f5a;
+}
+.dailyKanjiBox {
+  width: 28rem;
+  height: 28rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  perspective: 1000px;
+}
+.dailyKanjiBox .front {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: rotateY(0deg);
+  backface-visibility: hidden;
+  transition: transform 0.4s linear;
+}
+.dailyKanjiBox .back {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  transition: transform 0.4s linear;
+  background-color: #ffe0ef;
+}
+.dailyKanjiBox:hover .front {
+  transform: rotateY(-180deg);
+  cursor: pointer;
+}
+.dailyKanjiBox:hover .back {
+  transform: rotateY(0deg);
+  cursor: pointer;
+}
+
+.dailyKanjiCharacter {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 200px;
+  line-height: 242px;
+  color: #392f5a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+}
+.dailyKanjiCharacterKunyomi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  /* identical to box height */
+  color: #392f5a;
+}
+.dailyKanjiCharacterTrad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 48px;
+
+  color: #392f5a;
+}
+.dailyKanjiCharacterRomaji {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 34px;
+  /* identical to box height */
+  color: #392f5a;
+}
+.btnNav {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 29px;
+  background: white;
+  border: none;
+  padding: 0.5em 1em;
+  color: #392f5a;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  transition: 0.5s ease;
+}
+.btnNav::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0.1rem;
+  width: 0;
+  background-color: #392f5a;
+  transition: 0.5s ease;
+}
+.btnNav:hover {
+  color: #ffffff;
+  z-index: 1;
+  transition-delay: 0.5s;
+}
+.btnNav:hover::before {
+  width: 100%;
+}
+.btnNav::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color: #392f5a;
+  transition: 0.4s ease;
+  z-index: -1;
+}
+.btnNav:hover::after {
+  height: 100%;
+  transition-delay: 0.4s;
+  color: #ffffff;
+}
+
+.btnText {
+  margin: 0.6rem;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 29px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
