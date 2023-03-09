@@ -5,6 +5,7 @@
 .pinkSquare {
   width: 80px;
   height: 80px;
+
   background: #ffe4fd;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
@@ -14,7 +15,6 @@
   padding: none;
   border-radius: 15px;
 }
-
 .siteIcon {
   font-family: "Inter";
   font-style: normal;
@@ -22,23 +22,23 @@
   font-size: 48px;
   line-height: 58px;
   /* identical to box height */
+
   color: #392f5a;
 }
-
 .title {
   font-style: normal;
   font-weight: 800;
   font-size: 54px;
   line-height: 65px;
+
   color: #392f5a;
 }
-
 .frontTitle {
   height: 12rem;
 }
-
 .mainContainer {
   padding-left: 35px;
+
   padding-right: 35px;
 }
 
@@ -62,7 +62,6 @@
   margin: 0 auto;
   margin-bottom: 35px;
 }
-
 .kanaBox {
   position: relative;
   width: 28rem;
@@ -87,9 +86,9 @@
   display: flex;
   align-items: center;
   text-align: center;
+
   color: #ffffff;
 }
-
 .boxTitle {
   margin: 1rem;
   font-style: normal;
@@ -99,9 +98,9 @@
   display: flex;
   align-items: center;
   text-align: center;
+
   color: #392f5a;
 }
-
 .dailyKanjiBox {
   width: 28rem;
   height: 28rem;
@@ -111,7 +110,6 @@
   position: relative;
   perspective: 1000px;
 }
-
 .dailyKanjiBox .front {
   height: 100%;
   width: 100%;
@@ -120,7 +118,6 @@
   backface-visibility: hidden;
   transition: transform 0.4s linear;
 }
-
 .dailyKanjiBox .back {
   display: flex;
   flex-direction: column;
@@ -133,12 +130,10 @@
   transition: transform 0.4s linear;
   background-color: #ffe0ef;
 }
-
 .dailyKanjiBox:hover .front {
   transform: rotateY(-180deg);
   cursor: pointer;
 }
-
 .dailyKanjiBox:hover .back {
   transform: rotateY(0deg);
   cursor: pointer;
@@ -155,7 +150,6 @@
   align-items: center;
   height: 60%;
 }
-
 .dailyKanjiCharacterKunyomi {
   display: flex;
   justify-content: center;
@@ -167,7 +161,6 @@
   /* identical to box height */
   color: #392f5a;
 }
-
 .dailyKanjiCharacterTrad {
   display: flex;
   justify-content: center;
@@ -176,9 +169,9 @@
   font-weight: 800;
   font-size: 40px;
   line-height: 48px;
+
   color: #392f5a;
 }
-
 .dailyKanjiCharacterRomaji {
   display: flex;
   justify-content: center;
@@ -190,7 +183,6 @@
   /* identical to box height */
   color: #392f5a;
 }
-
 .btnNav {
   font-style: normal;
   font-weight: 800;
@@ -206,7 +198,6 @@
   right: 1.5rem;
   transition: 0.5s ease;
 }
-
 .btnNav::before {
   content: "";
   position: absolute;
@@ -217,17 +208,14 @@
   background-color: #392f5a;
   transition: 0.5s ease;
 }
-
 .btnNav:hover {
   color: #ffffff;
   z-index: 1;
   transition-delay: 0.5s;
 }
-
 .btnNav:hover::before {
   width: 100%;
 }
-
 .btnNav::after {
   content: "";
   position: absolute;
@@ -239,7 +227,6 @@
   transition: 0.4s ease;
   z-index: -1;
 }
-
 .btnNav:hover::after {
   height: 100%;
   transition-delay: 0.4s;
@@ -254,5 +241,3 @@
   line-height: 29px;
   /* identical to box height */
 }
-
-/*# sourceMappingURL=style.css.map */
