@@ -1,0 +1,65 @@
+//button.scss
+
+.btnNav {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 29px;
+  background: white;
+  border: none;
+  padding: 0.5em 1em;
+  color: $color-primary;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  transition: 0.5s ease;
+}
+
+.btnNav::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0.1rem;
+  width: 0;
+  background-color: $color-primary;
+  transition: 0.5s ease;
+}
+
+.btnNav:hover {
+  color: #ffffff;
+  z-index: 1;
+  transition-delay: 0.5s;
+}
+
+.btnNav:hover::before {
+  width: 100%;
+}
+
+.btnNav::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color: $color-primary;
+  transition: 0.4s ease;
+  z-index: -1;
+}
+
+.btnNav:hover::after {
+  height: 100%;
+  transition-delay: 0.4s;
+  color: #ffffff;
+}
+
+.btnText {
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 29px;
+  /* identical to box height */
+}

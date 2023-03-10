@@ -28,9 +28,7 @@ require_once 'sql/get.php';
             </div>
         </div>
     </nav>
-   
-   
-    
+
         <div class="row frontTitle d-flex justify-content-center align-items-center">
             <div class="col-12">
                 <p class="title text-center">Bienvenue sur Murasaki !</p>
@@ -60,20 +58,20 @@ require_once 'sql/get.php';
                         ?>
                     </p>
                 </div>
-                <div class="back shadow">
-                    <p class="dailyKanjiCharacterKunyomi">
+                <div class="back dailyKanjiCharacter shadow">
+                    <p class="kunyomi">
                         <?php
                         $kanjiOfTheDay = getDailyKanji();
                         echo $kanjiOfTheDay['kanji_kunyomi'];
                         ?>
                     </p>
-                    <p class="dailyKanjiCharacterTrad">
+                    <p class="trad">
                         <?php
                         $kanjiOfTheDay = getDailyKanji();
                         echo $kanjiOfTheDay['kanji_meaning'];
                         ?>
                     </p>
-                    <p class="dailyKanjiCharacterRomaji">
+                    <p class="romaji">
                         <?php
                         $kanjiOfTheDay = getDailyKanji();
                         echo $kanjiOfTheDay['kanji_romaji_writing'];
@@ -104,7 +102,5 @@ require_once 'sql/get.php';
             
         </div>
 
-   
-
-</body>
+  </body>
 </html>

@@ -1,0 +1,59 @@
+// variables.scss
+
+$color-primary: #392f5a;
+$color-secondary: #be4772;
+$color-tertiary: #d3789a;
+$color-quaternary: #9c88a5;
+$color-quinary: #ffe4fd;
+
+.boxTitleWhite {
+  margin: 1rem;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 58px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+.boxTitle {
+  margin: 1rem;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 58px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #392f5a;
+}
+
+.dailyKanjiCharacter {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 200px;
+  line-height: 242px;
+  color: #392f5a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+
+  .kunyomi {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+  }
+  .trad {
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 48px;
+  }
+  .romaji {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+  }
+}

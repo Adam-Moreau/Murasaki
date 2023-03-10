@@ -60,20 +60,20 @@ require_once 'sql/get.php';
                         ?>
                     </p>
                 </div>
-                <div class="back shadow">
-                    <p class="dailyKanjiCharacterKunyomi">
+                <div class="back dailyKanjiCharacter shadow">
+                    <p class="kunyomi">
                         <?php
                         $kanjiOfTheDay = getDailyKanji();
                         echo $kanjiOfTheDay['kanji_kunyomi'];
                         ?>
                     </p>
-                    <p class="dailyKanjiCharacterTrad">
+                    <p class="trad">
                         <?php
                         $kanjiOfTheDay = getDailyKanji();
                         echo $kanjiOfTheDay['kanji_meaning'];
                         ?>
                     </p>
-                    <p class="dailyKanjiCharacterRomaji">
+                    <p class="romaji">
                         <?php
                         $kanjiOfTheDay = getDailyKanji();
                         echo $kanjiOfTheDay['kanji_romaji_writing'];
