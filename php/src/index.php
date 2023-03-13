@@ -9,7 +9,7 @@ require_once 'sql/get.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Murasaki</title>
     
     <!-- Move CSS imports to the bottom of the head section -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -21,13 +21,7 @@ require_once 'sql/get.php';
 </head>
 <body>
 
-    <nav class="navbar customNavbar shadow">
-        <div class="container d-flex justify-content-center align-items-center">
-            <div class="pinkSquare d-flex justify-content-center align-items-center">
-                <div class="siteIcon">紫</div>
-            </div>
-        </div>
-    </nav>
+        <?php include 'navbar.html' ; ?>
 
         <div class="row frontTitle d-flex justify-content-center align-items-center">
             <div class="col-12">
