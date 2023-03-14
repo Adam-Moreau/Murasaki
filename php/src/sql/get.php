@@ -45,3 +45,15 @@ function countKanjis()
     $result = $stmt->fetchColumn();
     return $result;
 }
+
+function getCategories()
+{
+    require_once 'sql/connexion.php';
+
+    $pdo = connect();
+
+    $stmt = $pdo->prepare('SELECT * FROM categories');
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result;
+}

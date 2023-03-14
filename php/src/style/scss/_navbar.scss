@@ -4,6 +4,7 @@
   height: 6rem;
   background-color: #ffffff;
   z-index: 1;
+  width : 100% ; 
 }
 
 .siteIcon {
@@ -25,15 +26,15 @@
 }
 
 .title {
+  height: 12rem;
+  display : flex;
+  justify-content : center ;
+  align-items : center;
   font-style: normal;
   font-weight: 800;
   font-size: 54px;
   line-height: 65px;
   color: $color-primary;
-}
-
-.frontTitle {
-  height: 12rem;
 }
 
 .mainContainer {
