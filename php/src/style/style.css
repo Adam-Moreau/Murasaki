@@ -56,6 +56,29 @@
   line-height: 34px;
 }
 
+.title {
+  height: 12rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 54px;
+  line-height: 65px;
+  color: #392f5a;
+}
+
+.titleNavbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+  color: #392f5a;
+  margin-left: 1rem;
+}
+
 .vocTabBox {
   position: relative;
   flex: 1;
@@ -126,10 +149,14 @@
 }
 
 .customNavbar {
-  height: 6rem;
+  height: 7rem;
   background-color: #ffffff;
   z-index: 1;
   width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .siteIcon {
@@ -150,21 +177,19 @@
   border-radius: 5px;
 }
 
-.title {
-  height: 12rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 54px;
-  line-height: 65px;
-  color: #392f5a;
-}
-
 .mainContainer {
   padding-left: 35px;
   padding-right: 35px;
+}
+
+.icons {
+  width: 48px;
+  height: 48px;
+  margin-left: auto;
+}
+
+.leftItems {
+  display: flex;
 }
 
 .btnNav {

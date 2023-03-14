@@ -1,19 +1,6 @@
 <?php
 
-session_start(); // Start a PHP session
-
-
-
-// Check if the user is logged in and is an admin
-if (
-    !isset($_SESSION['user_id']) ||
-    !isset($_SESSION['is_admin']) ||
-    !$_SESSION['is_admin']
-) {
-    // User is not logged in or is not an admin, redirect to the login page
-    header('Location: mithrandir-portal.php');
-    exit();
-}
+require_once 'auth.php' ;
 require_once 'sql/get.php';
 // User is logged in and is an admin, display the admin panel
 ?>
@@ -44,6 +31,5 @@ require_once 'sql/get.php';
                 </div>
             </div>
         </div>
-        <a href='logout.php'>Logout</a> 
     </body>
 </html>

@@ -1,21 +1,22 @@
-// mixins.scss
-
-@mixin square($size, $background-color) {
-  width: $size;
-  height: $size;
-  background-color: $background-color;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 5px;
+.title {
+  height: 12rem;
+  display : flex;
+  justify-content : center ;
+  align-items : center;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 54px;
+  line-height: 65px;
+  color: $color-primary;
 }
 
-@mixin box-title($color) {
-  margin: 1rem;
+.titleNavbar {
+  display : flex;
+  justify-content : center ;
+  align-items : center;
   font-style: normal;
   font-weight: 900;
-  font-size: 48px;
-  line-height: 58px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  color: $color;
+  font-size: 36px;
+  color: $color-primary;
+  margin-left : 1rem;
 }
