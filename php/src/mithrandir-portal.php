@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel='stylesheet' href='style/style.css'>
 </head>
 <body>
-    <?php include 'navbar.html'; ?>
+    <?php include 'navbar.php'; ?>
     <div class='containerAdmin'>
         <div class='loginAdmin'>
             <h1 class='boxTitle'>Se connecter</h1>

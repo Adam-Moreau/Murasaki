@@ -166,3 +166,18 @@
 .labelFormAdmin {
   position: relative;
 }
+
+.managmentBox {
+  display: flex;
+  background-color: #ffe4fd;
+  width: 15rem;
+  height: 15rem;
+  margin-top: 35px;
+  border: 1px solid transparent;
+  border-radius: 15px;
+  z-index: 0;
+  .boxTitle {
+    font-size: 1.5rem;
+    color : $color-primary ;
+  }
+}

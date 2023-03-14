@@ -21,7 +21,7 @@ require_once 'sql/get.php';
 </head>
 <body>
 
-        <?php include 'navbar.html' ; ?>
+        <?php include 'navbar.php' ; ?>
 
         <div class="row frontTitle d-flex justify-content-center align-items-center">
             <div class="col-12">

@@ -2,6 +2,8 @@
 
 session_start(); // Start a PHP session
 
+
+
 // Check if the user is logged in and is an admin
 if (
     !isset($_SESSION['user_id']) ||
@@ -12,7 +14,7 @@ if (
     header('Location: mithrandir-portal.php');
     exit();
 }
-
+require_once 'sql/get.php';
 // User is logged in and is an admin, display the admin panel
 ?>
 
@@ -29,8 +31,19 @@ if (
         <title>Admin Managment</title>
     </head>
     <body>
-        <?php include 'navbar.html'?>
-        Hello World !   
+        <?php include 'navbar.php'; ?>
+
+        <?php include 'sidebar.php' ; ?>
+
+
+        <div class="container">
+            <div class="row d-flex justify-content-between">  
+                <div class="col-3 managmentBox shadow">
+                    <h1 class="boxTitle"> <?php $nbrKanji = countKanjis();
+                                                echo 'Nombre de kanjis : '. $nbrKanji ; ;?></h1>
+                </div>
+            </div>
+        </div>
         <a href='logout.php'>Logout</a> 
     </body>
 </html>

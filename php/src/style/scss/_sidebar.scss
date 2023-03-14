@@ -1,0 +1,32 @@
+.sidebar {
+  padding: 5px;
+  padding-top: 135px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100%;
+  background: #be4772;
+  transition: width 0.4s;
+  z-index: 0;
+}
+
+.sidebar a {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 900;
+  transition: 0.3s;
+  color: #ffffff;
+  text-decoration: none;
+  height: 3.3rem;
+}
+
+.sidebar a:hover {
+  background: #ffffff;
+  color: #be4772;
+  border-radius: 5px;
+  height: 3.3rem;
+}

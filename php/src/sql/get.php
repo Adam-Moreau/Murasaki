@@ -3,17 +3,17 @@
 function getDailyKanji()
 {
     require_once 'sql/connexion.php';
-    
+
     $pdo = connect();
 
-    $stmt = $pdo->prepare('SELECT * FROM kanji ORDER BY RAND() LIMIT 1');
+    $stmt = $pdo->prepare('SELECT * FROM kanjis ORDER BY RAND() LIMIT 1');
     $stmt->execute();
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     return $result;
 }
 
-function getUsername($username){
-
+function getUsername($username)
+{
     require_once 'sql/connexion.php';
 
     $pdo = connect();
@@ -26,12 +26,22 @@ function getUsername($username){
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     return $user;
-
 }
 
-function passwordVerify($password, $hashed_password) {
-
+function passwordVerify($password, $hashed_password)
+{
     // Use the PHP password_verify function to check if the password matches the hash
     return password_verify($password, $hashed_password);
+}
 
+function countKanjis()
+{
+    require_once 'sql/connexion.php';
+
+    $pdo = connect();
+
+    $stmt = $pdo->prepare('SELECT COUNT( kanji_id ) FROM kanjis');
+    $stmt->execute();
+    $result = $stmt->fetchColumn();
+    return $result;
 }
