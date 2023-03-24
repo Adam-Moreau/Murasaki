@@ -54,6 +54,6 @@ function getCategories()
 
     $stmt = $pdo->prepare('SELECT * FROM categories');
     $stmt->execute();
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    return $result;
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return json_encode($result);
 }
