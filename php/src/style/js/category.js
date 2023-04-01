@@ -55,6 +55,14 @@ function makeRowEditable(row) {
   for (var i = 0; i < cells.length; i++) {
     var cell = cells[i];
     var text = cell.innerHTML;
-    cell.innerHTML = "<input type='text' value='" + text + "'>";
+    if (i === 0 || i === 1) {
+      cell.innerHTML = "<input type='text' value='" + text + "'>";
+    } else if (i === 2) {
+      cell.innerHTML =
+        "<a href='#' class='validate-btn'><i class='fas fa-check'></i></a>";
+    } else if (i === 3) {
+      cell.innerHTML =
+        "<a href='#' class='cancel-btn'><i class='fas fa-times'></i></a>";
+    }
   }
 }

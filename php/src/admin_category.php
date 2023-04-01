@@ -20,9 +20,11 @@ require_once 'sql/get.php';
         <script src="style/js/category.js"></script>
         <script>
             // Event listener for edit category link
-            $(document).on("click", ".edit-category", function() {
-                makeEditable($(this).data("category-id"));
+            $(document).on('click', '.edit-category', function() {
+                var row = $(this).closest('tr')[0];
+                makeRowEditable(row);
             });
+
 
 
             // Event listener for delete category link
@@ -89,7 +91,7 @@ require_once 'sql/get.php';
                         <input class="btnAddCategory" type="submit" value="Ajouter">
                     </form>
                 </div>
-                <table class='table'>
+                <table class='table mt-3'>
                     <thead>
                         <tr>
                             <th>Kanji</th>
