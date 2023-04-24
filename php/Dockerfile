@@ -10,5 +10,9 @@ RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 RUN apt-get update && apt-get upgrade -y
 RUN docker-php-ext-install pdo pdo_mysql
 
+# Install Sass
+RUN apt-get update && apt-get install -y ruby-full
+RUN gem install sass
+
 # Update and upgrade packages
 RUN apt-get update && apt-get upgrade -y

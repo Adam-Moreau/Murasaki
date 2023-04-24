@@ -6,7 +6,7 @@ function getDailyKanji()
 
     $pdo = connect();
 
-    $stmt = $pdo->prepare('SELECT * FROM kanjis ORDER BY RAND() LIMIT 1');
+    $stmt = $pdo->prepare('SELECT * FROM kanji ORDER BY RAND() LIMIT 1');
     $stmt->execute();
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     return $result;
@@ -40,7 +40,7 @@ function countKanjis()
 
     $pdo = connect();
 
-    $stmt = $pdo->prepare('SELECT COUNT( kanji_id ) FROM kanjis');
+    $stmt = $pdo->prepare('SELECT COUNT( kanji_id ) FROM kanji');
     $stmt->execute();
     $result = $stmt->fetchColumn();
     return $result;
@@ -52,7 +52,7 @@ function getCategories()
 
     $pdo = connect();
 
-    $stmt = $pdo->prepare('SELECT * FROM categories');
+    $stmt = $pdo->prepare('SELECT categories_id, categories_name FROM categories');
     $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return json_encode($result);

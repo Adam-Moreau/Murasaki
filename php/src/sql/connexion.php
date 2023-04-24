@@ -1,7 +1,7 @@
 <?php
 function connect() {
     $host = 'db';
-    $dbname = 'murasaki';
+    $dbname = 'murasaki_database';
     $username = 'root';
     $password = 'MYSQL_ROOT_PASSWORD';
 

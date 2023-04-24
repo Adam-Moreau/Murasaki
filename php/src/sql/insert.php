@@ -3,26 +3,24 @@
 if (isset($_POST['function_name']) && !empty($_POST['function_name'])) {
     $function_name = $_POST['function_name'];
     if ($function_name == 'addCategory') {
-        addCategory($_POST['kanji'], $_POST['category']);
+        addCategory($_POST['category']);
     }
 }
 
-function addCategory($kanji, $category)
+function addCategory($category)
 {
     require_once 'connexion.php';
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $kanji = $_POST['kanji'];
         $category = $_POST['category'];
 
         $pdo = connect();
 
         // Check if category already exists
         $stmt = $pdo->prepare(
-            'SELECT COUNT(*) FROM categories WHERE categories_name = :name OR categories_icon = :icon;'
+            'SELECT COUNT(*) FROM categories WHERE categories_name = :name'
         );
         $stmt->bindParam(':name', $category);
-        $stmt->bindParam(':icon', $kanji);
         $stmt->execute();
         $count = $stmt->fetchColumn();
 
@@ -32,10 +30,9 @@ function addCategory($kanji, $category)
         } else {
             // Category does not exist, insert
             $stmt = $pdo->prepare(
-                'INSERT INTO categories(categories_name, categories_icon) VALUES(:name, :icon);'
+                'INSERT INTO categories(categories_name) VALUES(:name);'
             );
             $stmt->bindParam(':name', $category);
-            $stmt->bindParam(':icon', $kanji);
             $stmt->execute();
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
