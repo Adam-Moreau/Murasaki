@@ -1,4 +1,4 @@
-<nav class="sidebar fixed-top">
+<nav class="sidebar">
 
     <a href="admin_category.php">Catégories</a>
 

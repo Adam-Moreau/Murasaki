@@ -39,9 +39,6 @@ function updateKanjisTable() {
                         data[i].kanji_romaji_writing +
                         "</td>" +
                         "<td>" +
-                        data[i].kanji_is_daily +
-                        "</td>" +
-                        "<td>" +
                         data[i].category_name +
                         "</td>" +
                         "<td><a href='#' class='edit-kanji'><i class='fas fa-edit'></i></a></td>" +
@@ -82,7 +79,9 @@ function makeRowEditable(row) {
         var cell = cells.eq(i);
         initialValue.push(cell.html());
 
+
         cell.html("<input type='text' value='" + cell.html() + "'>");
+
     }
 
     var editCell = cells.eq(cells.length - 2);
@@ -171,11 +170,11 @@ function deleteElement(kanjiId) {
         url: "updateTable.php",
         method: "POST",
         data: { function_name: "deleteKanji", kanji_id: kanjiId },
-        success: function(result) {
+        success: function (result) {
             console.log("Element deleted successfully");
             $('#kanjiTable').html(result); // Update the table with the updated HTML
         },
-        error: function(xhr, status, error) {
+        error: function (xhr, status, error) {
             console.error("AJAX Error:", status, error);
         }
     });

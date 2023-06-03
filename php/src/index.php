@@ -33,7 +33,7 @@ require_once 'sql/get.php';
 
             <div class="col-9 vocTabBox">
                 <h1 class="boxTitleWhite">Tableaux de vocabulaire</h1>
-                <a class="btnText" href="#">
+                <a class="btnText" href="table.php">
                     <div class="btnNav">
                     Voir les tableaux
                         
@@ -44,7 +44,7 @@ require_once 'sql/get.php';
             </div>
             <div class="col-3 dailyKanjiBox">
                 <div class="front shadow">
-                    <h1 class="boxTitle">Le kanji du jour</h1>
+                    <h1 class="boxTitle">Kanji aléatoire</h1>
                     <p class="dailyKanjiCharacter">
                         <?php
                         $kanjiOfTheDay = getDailyKanji();
@@ -55,19 +55,16 @@ require_once 'sql/get.php';
                 <div class="back dailyKanjiCharacter shadow">
                     <p class="kunyomi">
                         <?php
-                        $kanjiOfTheDay = getDailyKanji();
                         echo $kanjiOfTheDay['kanji_kunyomi'];
                         ?>
                     </p>
                     <p class="trad">
                         <?php
-                        $kanjiOfTheDay = getDailyKanji();
                         echo $kanjiOfTheDay['kanji_meaning'];
                         ?>
                     </p>
                     <p class="romaji">
                         <?php
-                        $kanjiOfTheDay = getDailyKanji();
                         echo $kanjiOfTheDay['kanji_romaji_writing'];
                         ?>
                     </p>

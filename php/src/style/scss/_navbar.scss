@@ -41,4 +41,6 @@
 
 .leftItems {
   display: flex;
+  text-decoration: none; /* Remove default text underline */
+  color: inherit; /* Inherit the color from parent */
 }

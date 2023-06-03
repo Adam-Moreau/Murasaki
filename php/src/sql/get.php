@@ -6,11 +6,12 @@ function getDailyKanji()
 
     $pdo = connect();
 
-    $stmt = $pdo->prepare('SELECT * FROM kanji ORDER BY RAND() LIMIT 1');
+    $stmt = $pdo->prepare('SELECT * FROM kanji WHERE kanji_is_daily = 1 ORDER BY RAND() LIMIT 1');
     $stmt->execute();
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     return $result;
 }
+
 
 function getUsername($username)
 {
@@ -91,4 +92,3 @@ function getCategoryNames($categoryIds)
 
     return $categories;
 }
-

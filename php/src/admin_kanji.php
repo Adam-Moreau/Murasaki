@@ -127,7 +127,6 @@ require_once 'sql/edit.php';
                         <th>Kunyomi</th>
                         <th>Onyomi</th>
                         <th>Romaji</th>
-                        <th>Daily</th>
                         <th>Catégorie</th>
                         <th>Editer</th>
                         <th>Supprimer</th>

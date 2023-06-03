@@ -64,6 +64,11 @@
   color: #392f5a;
   margin-left: 1rem; }
 
+.text {
+  color: #392f5a;
+  font-weight: 600;
+  font-size: 16px; }
+
 .vocTabBox {
   position: relative;
   flex: 1;
@@ -160,7 +165,11 @@
   margin-left: auto; }
 
 .leftItems {
-  display: flex; }
+  display: flex;
+  text-decoration: none;
+  /* Remove default text underline */
+  color: inherit;
+  /* Inherit the color from parent */ }
 
 .btnNav {
   font-style: normal;
