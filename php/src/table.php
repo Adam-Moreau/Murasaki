@@ -24,6 +24,19 @@ require_once 'sql/get.php';
 
     <?php include 'navbar.php'; ?>
 
+    <div class="filter-container mb-3">
+        <label for="category-filter">Filter by Category:</label>
+        <select id="category-filter">
+            <option value="">All</option>
+            <?php
+            $categories = json_decode(getCategories(), true);
+            foreach ($categories as $category) {
+                echo "<option value='" . $category['categories_name'] . "'>" . $category['categories_name'] . "</option>";
+            }
+            ?>
+        </select>
+    </div>
+
     <table class='table mt-3'>
         <thead class="text">
             <tr>
@@ -45,14 +58,35 @@ require_once 'sql/get.php';
                 echo "<td>" . $kanji['kanji_kunyomi'] . "</td>";
                 echo "<td>" . $kanji['kanji_onyomi'] . "</td>";
                 echo "<td>" . $kanji['kanji_romaji_writing'] . "</td>";
-                echo "<td>" . $kanji['category_name'] . "</td>";
+                echo "<td>" . $kanji['categories_name'] . "</td>";
                 echo "</tr>";
             }
             ?>
         </tbody>
-
-
     </table>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Handle category filter change event
+            $('#category-filter').change(function() {
+                var selectedCategory = $(this).val();
+                console.log(selectedCategory);
+
+                // Show/hide rows based on the selected category
+                $('tbody tr').each(function() {
+                    var categoryCell = $(this).find('td:nth-child(6)');
+                    var category = categoryCell.text();
+
+                    if (selectedCategory === '' || category.includes(selectedCategory)) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

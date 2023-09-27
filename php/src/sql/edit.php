@@ -52,7 +52,7 @@ function updateKanji($kanji_id, $new_values)
     $pdo = connect();
 
     // Prepare the SQL query to update the kanji with the given ID
-    $stmt = $pdo->prepare('UPDATE kanji SET kanji_character = :character, kanji_meaning = :meaning, kanji_kunyomi = :kunyomi, kanji_onyomi = :onyomi, kanji_romaji_writing = :romaji WHERE kanji_id = :id');
+    $stmt = $pdo->prepare('UPDATE kanji SET kanji_character = :character, kanji_meaning = :meaning, kanji_kunyomi = :kunyomi, kanji_onyomi = :onyomi, kanji_romaji_writing = :romaji, category_id = :category WHERE kanji_id = :id');
     
     // Bind the values to the prepared statement
     $stmt->bindParam(':id', $kanji_id);
@@ -61,6 +61,8 @@ function updateKanji($kanji_id, $new_values)
     $stmt->bindParam(':kunyomi', $new_values[0][2]);
     $stmt->bindParam(':onyomi', $new_values[0][3]);
     $stmt->bindParam(':romaji', $new_values[0][4]);
+    $stmt->bindParam(':category', $new_values[0][5]);
+
 
     // Execute the query
     $result = $stmt->execute();

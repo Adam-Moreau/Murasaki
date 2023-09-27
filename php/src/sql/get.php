@@ -6,11 +6,27 @@ function getDailyKanji()
 
     $pdo = connect();
 
-    $stmt = $pdo->prepare('SELECT * FROM kanji WHERE kanji_is_daily = 1 ORDER BY RAND() LIMIT 1');
+    $stmt = $pdo->prepare('SELECT * FROM kanji WHERE kanji_is_daily = 0 ORDER BY RAND() LIMIT 1');
     $stmt->execute();
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$result) {
+        // No kanji found with kanji_is_daily = 0, update all kanjis
+        $updateAllStmt = $pdo->prepare('UPDATE kanji SET kanji_is_daily = 0');
+        $updateAllStmt->execute();
+
+        // Call the function recursively to get a new kanji
+        return getDailyKanji();
+    }
+
+    // Update the selected kanji's kanji_is_daily to 1
+    $updateSelectedStmt = $pdo->prepare('UPDATE kanji SET kanji_is_daily = 1 WHERE kanji_id = :kanji_id');
+    $updateSelectedStmt->bindParam(':kanji_id', $result['kanji_id']);
+    $updateSelectedStmt->execute();
+
     return $result;
 }
+
 
 
 function getUsername($username)
@@ -74,7 +90,7 @@ function getKanjis()
     // Add category names to the result array
     foreach ($result as &$row) {
         $categoryId = $row['category_id'];
-        $row['category_name'] = $categoryNames[$categoryId];
+        $row['categories_name'] = $categoryNames[$categoryId];
     }
 
     return json_encode($result);

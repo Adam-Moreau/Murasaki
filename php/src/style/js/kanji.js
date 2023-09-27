@@ -39,7 +39,7 @@ function updateKanjisTable() {
                         data[i].kanji_romaji_writing +
                         "</td>" +
                         "<td>" +
-                        data[i].category_name +
+                        data[i].categories_name +
                         "</td>" +
                         "<td><a href='#' class='edit-kanji'><i class='fas fa-edit'></i></a></td>" +
                         "<td><a href='#' class='delete-btn'><i class='fas fa-trash-alt'></i></a></td>" +
@@ -79,8 +79,35 @@ function makeRowEditable(row) {
         var cell = cells.eq(i);
         initialValue.push(cell.html());
 
+        // Check if it's the cell where you want to populate categories
+        if (i === 5) {
+            // Make an AJAX request to fetch categories from the server
+            $.ajax({
+                url: 'updateTable.php', // Replace with the actual PHP file path
+                method: 'POST',
+                data: { function_name: 'getCategories' },
+                success: function (result) {
 
-        cell.html("<input type='text' value='" + cell.html() + "'>");
+                    var data = JSON.parse(result);
+                    console.log(data);
+                    // Create a dropdown menu with categories
+                    var select = "<select>";
+                    for (var i = 0; i < data.length; i++) {
+                        select += "<option value='" + data[i].categories_id + "'>" + data[i].categories_name + "</option>";
+                    };
+                    select += "</select>";
+
+                    // Replace the cell content with the dropdown menu
+                    cell.html(select);
+                },
+                error: function () {
+                    // Handle error if the AJAX request fails
+                    console.log('Failed to fetch categories');
+                }
+            });
+        } else {
+            cell.html("<input type='text' value='" + cell.html() + "'>");
+        }
 
     }
 
@@ -96,7 +123,16 @@ function makeRowEditable(row) {
 
         for (var i = 0; i < cells.length - 2; i++) {
             var cell = cells.eq(i);
-            newValues.push(cell.find("input").val());
+            var input = cell.find("input");
+            var select = cell.find("select");
+
+            if (input.length) {
+                newValues.push(input.val());
+            } else if (select.length) {
+                newValues.push(select.val());
+            } else {
+                newValues.push(cell.html());
+            }
         }
 
         var hasChanges = false;
@@ -110,6 +146,7 @@ function makeRowEditable(row) {
 
         if (hasChanges) {
             updateElement(row.attr("data-kanji-id"), newValues, function () {
+                console.log(newValues);
                 updateKanjisTable();
                 restoreEditDeleteButtons();
             });
@@ -117,6 +154,7 @@ function makeRowEditable(row) {
             cancelCell.click();
         }
     });
+
 
     var cancelCell = $("<td><a href='#' class='cancel-btn'><i class='fas fa-times'></i></a></td>");
     cancelCell.on("click", function (e) {
